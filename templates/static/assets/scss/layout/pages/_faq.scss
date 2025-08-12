@@ -1,0 +1,110 @@
+@use "../../utils" as *;
+
+/*----------------------------------------*/
+/*  10.2 faq
+/*----------------------------------------*/
+.rr__faq {
+    .accordion-button {
+        font-size: var(--rr-fs-h4);
+        line-height: var(--rr-lh-h4);
+        color: var(--rr-heading-primary);
+        font-weight: var(--rr-fw-medium);
+        background: transparent;
+        padding: 0;
+        padding-right: 20px;
+        @extend %rr-transition-3;
+        display: inline-block;
+        
+        @media #{$xs} {
+            font-size:var(--rr-fs-h5);
+            line-height: var(--rr-lh-h5)
+        }
+        
+        &:focus {
+            box-shadow: none;
+        }
+        
+        &:not(.collapsed) {
+            color: var(--rr-theme-primary);
+            box-shadow: none;
+            &::after {
+                color: var(--rr-theme-primary);
+                content: "\f106";
+            }
+        }
+        &::after {
+            position: absolute;
+            right: 0;
+            content: "\f107";
+            background-image: none;
+            font-family: var(--rr-ff-fontawesome);
+            color: var(--rr-heading-primary);
+            font-size: 18px;
+            top: 50%;
+            line-height:12px;
+            font-weight: 500;
+            text-align: center;
+            @extend %translateY1_2;
+        }
+    }
+    .accordion-body {
+        padding: 0;
+        padding-top: 10px;
+        
+        > p {
+            font-size: var(--rr-fs-body2);
+            line-height: var(--rr-lh-body2);
+            margin-bottom: 0;
+        }
+    }
+    
+    .accordion-item {
+        margin-bottom: 20px;
+        padding: 19px 30px;
+        @include border-radius(10px);
+        border: 1px solid rgba(0, 15, 32, 0.10);
+        background: var(--rr-common-white);
+        @extend %rr-transition-3;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+        
+        &:has(.show) {
+            border-color: transparent;
+            box-shadow: 0px 30px 60px 0px rgba(0, 15, 32, 0.10);
+        }
+    }
+}
+
+.faq__media {
+    width: 570px;
+    position: relative;
+    height: 442px;
+    @include border-radius(10px);
+    overflow: hidden;
+    
+    @media #{$lg, $md, $sm, $xs} {
+        margin-top: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        height: auto;
+    }
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    a {
+        background-color: inherit;
+        padding: 0;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        @include transform(translate(-50%, -50%));
+        
+    }
+}

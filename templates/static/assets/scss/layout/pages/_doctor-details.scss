@@ -1,0 +1,347 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  10.6 doctor-details
+/*----------------------------------------*/
+
+.doctor-details {
+    
+    &__media {
+        overflow: hidden;
+        @include border-radius(10px);
+        width: 100%;
+        height: 470px;
+        
+        img {
+            width:100%;
+            height:100%;
+            object-fit: cover;
+        }
+    }
+    
+    &__box {
+        position: relative;
+        z-index: 33;
+        margin-top: -55px;
+        padding: 28px 30px;
+        min-width: 330px;
+        display: inline-block;
+        @include border-radius(10px);
+        background: var(--rr-common-white);
+        box-shadow: 0px 30px 60px 0px rgba(0, 15, 32, 0.10);
+        
+        @media #{$lg, $md, $sm, $xs} {
+            min-width: 280px;
+        }
+        
+        h4 {
+            text-align: center;
+            font-size: 22px;
+            font-style: normal;
+            line-height: normal;
+        }
+    }
+    
+    &__left {
+        
+        .personal-info {
+            text-align: left;
+            padding: 30px 40px;
+            @include border-radius(10px);
+            border: 1px solid rgba(0, 15, 32, 0.10);
+            background: var(--rr-common-white);
+            
+            h4 {
+                text-align: center;
+            }
+            
+            &__list {
+                display: flex;
+                flex-direction: column;
+                gap: 7px;
+                
+                li {
+                    list-style: none;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    
+                    @media #{$xxs} {
+                        flex-direction: column;
+                        align-items: start;
+                        gap: 2px;
+                    }
+                    
+                    span {
+                        color: var(--rr-heading-primary);
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 34px;
+                    }
+                    
+                    a {
+                        color: var(--rr-text-body);
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 34px;
+                        
+                        &:hover {
+                            color: var(--rr-theme-primary);
+                        }
+                    }
+                }
+            }
+        }
+        
+        .follow-me {
+            display: flex;
+            flex-direction: row;
+            gap: 7px 20px;
+            
+            &__social{
+                gap: 10px;
+                
+                a{
+                    position: relative;
+                    z-index: 1;
+                    border: 1px solid rgba(0, 15, 32, 0.10);
+                    @extend %rr-br;
+                    width: 36px;
+                    height: 36px;
+                    font-size:14px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    svg path {
+                        @extend %rr-transition-3;
+                    }
+                    
+                    &:after {
+                        top: 0;
+                        z-index: -1;
+                        left: 0;
+                        content: "";
+                        @extend %rr-transition-3;
+                        position: absolute;
+                        width: 100%;
+                        @include transform(scale(0));
+                        height: 100%;
+                        background: var(--rr-theme-primary-gradient);
+                        @extend %rr-br;
+                    }
+                    
+                    &:hover{
+                        @include transform(scale(1.2) translate(0, -5px));
+                        border-color: transparent;
+                        color: var(--rr-common-white);
+                        
+                        &:after {
+                            @include transform(scale(1));
+                        }
+                        
+                        svg path[fill="#4A5764"] {
+                            fill: var(--rr-common-white);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    &-content-block {
+        padding: 30px;
+        @include border-radius(10px);
+        border: 1px solid rgba(0, 15, 32, 0.10);
+        background: var(--rr-common-white);
+        
+        p {
+            max-width: 568px;
+        }
+    }
+}
+
+.skills-doctor {
+    &__item {
+        
+        &-wrapper {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 470px;
+        }
+        
+        &.percent-color-secondary .rr-progress input {
+            color: var(--rr-heading-primary) !important;
+        }
+        
+        .rr-progress{
+            
+            div[style] {
+                display: block !important;
+            }
+            
+            & input {
+                color: var(--rr-heading-primary) !important;
+                font-family: var(--rr-ff-heading) !important;
+                font-size: 24px !important;
+                font-style: normal !important;
+                font-weight: 500 !important;
+                line-height: 28px !important;
+            }
+        }
+    }
+}
+
+.educational-history_item {
+
+    h4 {
+        margin-bottom: 5px;
+    }
+    
+    ul {
+        display: flex;
+        flex-direction: column;
+        
+        li {
+            list-style: none;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 32px;
+        }
+    }
+}
+
+.appointment-schedules {
+    
+    &_item {
+        margin-bottom: 20px;
+        padding: 6px 30px;
+        @include border-radius(4px);
+        background-color: #F9F9F9;
+        
+        @media #{$md, $sm, $xs} {
+            display: flex;
+            padding: 15px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+        
+        &.header {
+            padding: 10.5px 30px;
+            @media #{$md, $sm, $xs} {
+                flex-direction: row;
+                gap: 10.5px 15px;
+            }
+            span {
+                color: var(--rr-heading-primary);
+                font-family: var(--rr-ff-heading);
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 28px;
+            }
+        }
+        
+        span {
+            color: var(--rr-text-body);
+            font-family: var(--rr-ff-body);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 28px;
+            display: inline-block;
+            
+            &:nth-child(1), &:nth-child(2)  { width: 35.3444% }
+            &:nth-child(3) { width: 28% }
+            
+            @media #{$xl} {
+                &:nth-child(1), &:nth-child(2)  { width: 34% }
+                &:nth-child(3) { width: 30% }
+            }
+            @media #{$lg} {
+                &:nth-child(1)  { width: 25% }
+                &:nth-child(2)  { width: 34% }
+                &:nth-child(3) { width: 38% }
+            }
+            
+            @media #{$md, $sm, $xs} {
+                width: 100% !important;
+            }
+        }
+    }
+    
+    .rr-btn {
+        padding: 4px 14px;
+        background: transparent;
+        border: 1px solid rgba(0, 15, 32, 0.10);
+        
+        span {
+            width: auto;
+            display: inline;
+            font-family: var(--rr-ff-body);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 28px;
+            
+            &.text-two {
+                color: var(--rr-common-white);
+            }
+        }
+    }
+}
+
+.doctor-details-form {
+    
+    &__input {
+        margin-bottom: 30px;
+        
+        input {
+            padding: 13px 20px;
+            background: #F9F9F9;
+            @include border-radius(4px);
+            border: transparent;
+            color: var(--rr-text-body) !important;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 28px;
+            @include rr-placeholder{
+                color: var(--rr-text-body) !important;
+            }
+        }
+    }
+    
+    &__textarea {
+        line-height: 0;
+        
+        textarea {
+            min-height: 98px;
+            padding: 13px 20px;
+            background: #F9F9F9;
+            @include border-radius(4px);
+            border: transparent;
+            color: var(--rr-text-body) !important;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+            @include rr-placeholder{
+                color: var(--rr-text-body) !important;
+            }
+            
+            &::-webkit-resizer {
+                display: none;
+            }
+        }
+    }
+}

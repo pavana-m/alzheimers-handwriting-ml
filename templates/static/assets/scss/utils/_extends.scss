@@ -1,0 +1,59 @@
+@use './mixins' as *;
+
+%rr-br {
+	@include border-radius(4px);
+}
+
+%rr-br-500 {
+	@include border-radius(500px);
+}
+
+%include-bg{
+	@include background();
+}
+%rr-transition-3 {
+	@include rr-transition();
+}
+%rr-transition-2{
+    @include rr-transition(opacity, 0.2s, ease-in-out);
+}
+%rr-transition-common{
+	@include rr-transition();
+}
+%rr-transition-color{
+	@include rr-transition(color);
+}
+%rr-transition-transform{
+	@include rr-transition(transform);
+}
+%rr-transition-border-color{
+	@include rr-transition(border-color);
+}
+%rr-transition-bg-color{
+	@include rr-transition(background-color);
+}
+%rr-transition-fz{
+	@include rr-transition(font-size);
+}
+// font
+%rr-ff-fontawesome{
+	font-family: var(--rr-ff-fontawesome);
+}
+/* transform */
+%translateY1_2{
+	@include transform(translateY(-50%));
+}
+%translateX1_2{
+	@include transform(translateX(-50%));
+}
+%translate1_2{
+	@include transform(translate(-50%, -50%));
+}
+// bg thumbnails
+%bg-thumb{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}

@@ -1,0 +1,220 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  9.1 banner Style 1
+/*----------------------------------------*/
+
+// Banner style
+.banner {
+	&__navigation {
+		@media (max-width:1250px) {
+			display: none !important;
+		}
+		button {
+			width: 80px;
+			height: 80px;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			@include border-radius(50%);
+			color: var(--rr-theme-primary);
+			position: absolute;
+			top: 50%;
+			@extend %translateY1_2;
+			left: 60px;
+			z-index: 55;
+			background-color: var(--rr-common-white);
+			@media #{$xxl } {
+				left: 20px;
+				width: 50px;
+				height: 50px;
+				svg {
+					max-width:17px !important;
+				}
+			}
+			@media #{ $xl, $lg, $md, $sm, $xs} {
+				left: 10px;
+				width: 50px;
+				height: 50px;
+				svg {
+					max-width:17px !important;
+				}
+			}
+			svg  {
+				max-width: 24px;
+				@media #{ $xl, $lg, $md, $sm, $xs} {
+					max-width:17px !important;
+				}
+				path {
+					@extend %rr-transition-3;
+				}
+			}
+			
+			&:after {
+				top: 0;
+				z-index: -1;
+				left: 0;
+				content: "";
+				@extend %rr-transition-3;
+				position: absolute;
+				width: 100%;
+				@include transform(scale(0));
+				height: 100%;
+				background: var(--rr-theme-primary-gradient);
+				@include border-radius(50%);
+			}
+			
+			&:hover {
+				color: var(--rr-common-white);
+				
+				svg path[stroke="#1745B3"] {
+					stroke: var(--rr-common-white);
+				}
+				
+				&:after {
+					@include transform(scale(1));
+				}
+			}
+		}
+		.banner__button-next {
+			left: auto;
+			right: 60px;
+			@media #{$xxl } {
+				width: 50px;
+				height: 50px;
+				right: 20px;
+				svg {
+					max-width:17px !important;
+				}
+			}
+			
+			@media #{ $xl, $lg, $md, $sm, $xs} {
+				right: 10px;
+				width: 50px;
+				height: 50px;
+				svg {
+					max-width:17px !important;
+				}
+			}
+		}
+	}
+	
+	&_parallax-slider {
+		position: relative;
+		
+		.swiper-slide {
+			position: relative;
+			overflow: hidden;
+			width: 100%;
+			height: calc(100% + 1px);
+			top: -1px;
+		}
+	}
+	
+	&:after {
+		position: absolute;
+		width: 1366px;
+		height: 101%;
+		content: "";
+		left: 0;
+		top: -1px;
+		background: linear-gradient(90deg, #EDF2F6 55.07%, rgba(237, 242, 246, 0.00) 100.56%);
+		
+		@media #{$xl} {
+			width: 1000px;
+		}
+		@media #{$lg} {
+			width: 800px;
+		}
+		@media #{$md} {
+			width: 750px;
+		}
+		@media #{$sm} {
+			width: 600px;
+		}
+		@media #{$xs} {
+			width: 550px;
+		}
+		@media #{$xxs} {
+			width:450px;
+		}
+		@media (max-width: 400px) {
+			width:400px;
+		}
+	}
+	
+	&__space {
+		padding: 207.5px 0;
+		
+		@media #{$xl} {
+			padding-top: 150px;
+			padding-bottom: 200px;
+		}
+		
+		@media #{$lg} {
+			padding-top: 120px;
+			padding-bottom: 180px;
+		}
+		
+		@media #{$md, $sm, $xs} {
+			padding-top: 80px;
+			padding-bottom: 150px;
+		}
+	}
+	
+	&__thumb-bg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		
+		@media #{$xs, $sm} {
+			background-position: -475px 0;
+		}
+		
+		@media #{$xxs} {
+			background-position: -562px 0
+		}
+		
+		@media (max-width: 400px) {
+			background-position: -667px 0;
+		}
+	}
+	
+	&__sub-title {
+		font-size: 22px;
+		line-height:24px;
+	}
+	
+	&__title {
+		@media #{$xs} {
+			font-size: 31px;
+		}
+	}
+	
+	&__content {
+		@media #{$xs} {
+			max-width: 380px;
+		}
+		
+		p {
+			max-width: 693px;
+			
+			@media #{$xxl } {
+				max-width: 625px;
+			}
+			@media #{$xl, $lg} {
+				max-width: 580px;
+			}
+			@media #{$md } {
+				max-width: 480px;
+			}
+			@media #{ $sm, $xs} {
+				max-width: 400px;
+			}
+		}
+	}
+}

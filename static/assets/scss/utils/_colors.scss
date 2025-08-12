@@ -1,0 +1,30 @@
+$colors: (
+  common: (
+    "white": #FFFFFF,
+    "black": #000000,
+    "placeholder": #4A5764,
+    "selection": #1745B3,
+  ),
+  body: (
+    "primary": #ffffff,
+  ),
+  theme: (
+    "primary-gradient": linear-gradient(90deg, #1745B3 0%, #07CBEB 100%),
+    "primary": #1745B3,
+    "secondary": #07CBEB,
+  ),
+  heading: (
+    "primary": #000F20,
+  ),
+  text: (
+    "body": #4A5764,
+    "primary": #000,
+  ),
+  shadow: (
+      "primary": 0px 30px 60px 0px rgba(0, 15, 32, 0.10),
+  ),
+  border: (
+    "primary": 1px solid rgba(0, 15, 32, 0.10),
+    "white30": 1px solid rgba(255, 255, 255, 0.30),
+  )
+);

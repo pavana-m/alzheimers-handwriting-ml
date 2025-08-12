@@ -1,0 +1,188 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  9.3 banner Style 1
+/*----------------------------------------*/
+
+// Banner style 3
+.banner-3 {
+    position: relative;
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    &__space {
+        padding: 170px 0 174px;
+        
+        @media #{$xl} {
+            padding: 150px 0;
+        }
+        
+        @media #{$lg} {
+            padding: 130px 0;
+        }
+        @media #{$md} {
+            padding: 100px 0;
+        }
+        @media #{$sm, $xs} {
+            padding: 80px 0;
+        }
+    }
+    
+    &__background-linear-gradient {
+        background: linear-gradient(90deg, rgba(23, 69, 179, 0.04) 0%, rgba(7, 203, 235, 0.04) 100%);
+    }
+    
+    &:before {
+        top: -450px;
+        opacity: .06;
+        left: -451px;
+        width: 1181.882px;
+        height: 1227.519px;
+        position: absolute;
+        z-index: -1;
+        content: "";
+        background-repeat: no-repeat;
+        background-image: url("../imgs/banner-3/shape.png");
+    }
+    
+    &:after {
+        right: -245px;
+        bottom: -210px;
+        width: 683.853px;
+        height: 761.647px;
+        position: absolute;
+        z-index: -1;
+        content: "";
+        background-repeat: no-repeat;
+        background-image: url("../imgs/banner-3/shape-1.png");
+    }
+    
+    &__content {
+        position: relative;
+        z-index: 1;
+        max-width: 732px;
+        
+        @media #{$xl} {
+            max-width:555px;
+        }
+        @media #{$md} {
+            max-width:380px;
+        }
+        
+        p {
+            color: var(--rr-body-text);
+        }
+        
+        .rr-btn {
+            @media #{$sm, $xs} {
+                padding: 12.5px 21.63px;
+            }
+        }
+    }
+    
+    &__title {
+        
+        span {
+            position: relative;
+            
+            &.circle-animation {
+                &:after {
+                    animation: zoominupanimation1 1.3S infinite alternate;
+                }
+            }
+            
+            &:after {
+                position: absolute;
+                content: " ";
+                top: -15px;
+                left: -35px;
+                z-index: -1;
+                background-image: url("../imgs/banner-3/title-shape.svg");
+                width: 474.524px;
+                height: 129.725px;
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                
+                @media #{$xl} {
+                    width: 327.524px;
+                    height: 91.725px;
+                }
+                @media #{$lg} {
+                    top: -9px;
+                    left: -24px;
+                    width: 276.524px;
+                    height: 73.725px;
+                }
+                @media #{$md} {
+                    top: -5px;
+                    left: -21px;
+                    width: 274.524px;
+                    height: 68.725px;
+                }
+                @media #{$sm} {
+                    top: -10px;
+                    left: -10px;
+                    width: 194.524px;
+                    height: 62.725px;
+                }
+                @media #{$xs} {
+                    top: -8px;
+                    left: -6px;
+                    width: 161.524px;
+                    height: 50.725px;
+                }
+            }
+        }
+    }
+    
+    &__media {
+        margin-left: -215px;
+        margin-top: -191px;
+        margin-right: -294px;
+        margin-bottom: -175px;
+        position: relative;
+        
+        @media #{$xl} {
+            margin-left: -184px;
+            margin-top: -160px;
+            margin-right: -111px;
+            margin-bottom: -175px;
+        }
+        
+        @media #{$lg} {
+            margin-left: -93px;
+            margin-top: -141px;
+            margin-right: -156px;
+            margin-bottom: -292px;
+        }
+        
+        @media #{$md} {
+            margin-left: -173px;
+            margin-top: -7px;
+            margin-right: -102px;
+            margin-bottom: -149px;
+        }
+        
+        @media #{$sm, $xs} {
+            margin-top: 40px;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: -100px;
+        }
+        
+        &-shape-1 {
+            position: absolute;
+            z-index: -2;
+            top: 141px;
+            left: 127px;
+            content: " ";
+            width: 604px;
+            height: 518px;
+            border-radius: 604px;
+            background: rgba(255, 169, 68, 0.16);
+            filter: blur(50px);
+        }
+    }
+}

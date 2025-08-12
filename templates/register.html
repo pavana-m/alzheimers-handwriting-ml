@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <!-- <title>Neumorphism Login Form UI | CodingNepal</title> -->
+      <link rel="stylesheet" href="static/style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+      <div class="content">
+         <div class="text">
+            Register Form
+         </div>
+         <form action="/signup" method="GET">
+            
+            
+            <div class="field">
+               <input type="text" name="user" id="name" required pattern="[A-Za-z].{6,}" title="Six or more Uppercase and lowercase letter req.">
+               <span class="fas fa-user"></span>
+               <label>Username</label>
+            </div>
+            <div class="field">
+               <input type="text" name="name" id="name" required>
+               <span class="fas fa-user"></span>
+               <label>Name</label>
+            </div>
+            <div class="field">
+               <input type="text" name="email" id="email" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$">
+               <span class="fas fa-envelope"></span>
+               <label>Email</label>
+            </div>
+
+            <div class="field">
+               <input type="text" name="mobile" id="phone" required pattern="[6-9]{1}[0-9]{9}" title="Phone number with 7-9 and remaing 9 digit with 0-9"/>
+               <span class="fas fa-phone"></span>
+               <label>Phone Number</label>
+            </div>
+            <div class="field">
+               <input type="password" name="password" id="pass"  required>
+               <span class="fas fa-lock"></span>
+               <label>Password</label>
+            </div>
+            <div class="forgot-pass">
+               <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit" name="signin" id="signin" >REGISTER </button>
+            <div class="sign-up">
+               Member?
+               <a href="/login">Signin</a>
+            </div>
+         </form>
+      </div>
+   </body>
+</html>

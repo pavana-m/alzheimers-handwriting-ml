@@ -1,0 +1,95 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  9.2 banner Style 1
+/*----------------------------------------*/
+
+// Banner style 2
+.banner-2 {
+    position: relative;
+    z-index: 1;
+  
+    
+    &__space {
+        padding: 164.5px 0;
+        
+        @media #{$xl} {
+            padding: 150px 0;
+        }
+        
+        @media #{$lg} {
+            padding: 130px 0;
+        }
+        @media #{$md} {
+            padding: 100px 0;
+        }
+        @media #{$sm, $xs} {
+            padding: 80px 0;
+        }
+    }
+    
+    &__background-image {
+        top: 0;
+        z-index: -1;
+        position: absolute;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        content: "";
+        object-fit: cover;
+    }
+    
+    &:after {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        opacity: 0.5;
+        content: "";
+        background: linear-gradient(90deg, #1745B3 0%, #07CBEB 100%);
+    }
+    
+    &__content {
+        max-width: 728px;
+        
+        .rr-btn {
+                @media #{$sm, $xs} {
+                    padding: 12.5px 21.63px;
+                }
+            
+            &__white {
+                color: var(--rr-theme-primary);
+            }
+        }
+        
+        p {
+            font-family: var(--rr-ff-body);
+        }
+    }
+    
+    &__icon {
+        @extend %rr-br-500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 70px;
+        background-color: var(--rr-common-white);
+        
+        @media #{$sm, $xs} {
+            width: 50px;
+            height: 50px;
+        }
+        
+        img {
+            max-width: 40px;
+            
+            @media #{$sm, $xs} {
+                max-width:30px;
+            }
+        }
+    }
+}

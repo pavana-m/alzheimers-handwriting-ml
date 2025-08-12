@@ -1,0 +1,175 @@
+@use "../../utils" as *;
+
+/*----------------------------------------*/
+/*  10.4 about
+/*----------------------------------------*/
+.service-experience {
+    
+    &__style-two {
+        background: var(--rr-theme-primary-gradient);
+        
+        .container {
+            &:after {
+                display: none;
+            }
+        }
+    }
+    
+    &__item-2 {
+        border-color: rgba(255, 255, 255, 0.30) !important;
+        
+        .service-experience__item-icon {
+            background: rgba(255, 255, 255, 0.10);
+        }
+        
+        h4 {
+            color: var(--rr-common-white) !important;
+        }
+        
+        
+        h2 {
+            color: var(--rr-common-white) !important;
+        }
+    }
+}
+
+.our-service-item {
+    @include border-radius(10px);
+    border: 1px solid rgba(0, 15, 32, 0.10);
+    background: var(--rr-common-white);
+    padding: 28.5px 10px;
+    
+    &:hover {
+        box-shadow: 0px 30px 60px 0px rgba(0, 15, 32, 0.10);
+        
+        .our-service-item-icon {
+            
+            &:after {
+                @include transform(scale(1));
+            }
+            
+            img {
+                filter: brightness(0) invert(1);
+            }
+        }
+    }
+    
+    &-icon {
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100px;
+        height: 100px;
+        z-index: 1;
+        @extend %rr-br-500;
+        display: flex;
+        align-items: center;
+        position: relative;
+        justify-content: center;
+        background: rgba(23, 69, 179, 0.10);
+        
+        &:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            @extend %rr-br-500;
+            z-index:-1;
+            content: "";
+            @extend %rr-transition-3;
+            @include transform(scale(0));
+            background: var(--rr-theme-primary-gradient);
+        }
+        
+        img {
+            max-width: 60px;
+        }
+    }
+    
+    &__text {
+        max-width: 214px;
+        margin-left: auto;
+        margin-right: auto;
+        
+        a {
+            &:hover h4 {
+                color: var(--rr-theme-primary);
+            }
+        }
+        
+        p {
+            line-height: 24px;
+        }
+        
+        .readmore {
+            
+            svg  {
+                margin-left: 2px;
+                
+                path {
+                    @extend %rr-transition-3;
+                }
+            }
+            
+            &:hover {
+                color: var(--rr-theme-primary);
+                
+                svg path[stroke="#4A5764"] {
+                    stroke: var(--rr-theme-primary);
+                }
+            }
+        }
+    }
+    
+    &__controller {
+        gap: 20px;
+        margin-top: 50px;
+        
+        @media #{$sm, $xs} {
+            margin-top: 30px;
+        }
+    }
+    
+    &__button-prev, &__button-next {
+        width: 50px;
+        @include border-radius(4px);
+        height: 50px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        position: relative;
+        border: 1px solid rgba(0, 15, 32, 0.10);
+        background: rgba(255, 255, 255, 0.00);
+        
+        &:after {
+            background: var(--rr-theme-primary-gradient);
+            position: absolute;
+            left: 0;
+            z-index: -1;
+            @include border-radius(4px);
+            top: 0;
+            width:100%;
+            height: 100%;
+            content: "";
+            @extend %rr-transition-3;
+            @include transform(scale(0));
+        }
+        
+        svg path {
+            @extend %rr-transition-3;
+        }
+        
+        &:hover {
+            svg path[stroke="#4A5764"] {
+                stroke: var(--rr-common-white);
+            }
+            
+            &:after {
+                @include transform(scale(1));
+            }
+        }
+    }
+}

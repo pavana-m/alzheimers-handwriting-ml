@@ -1,0 +1,23 @@
+@use "../../utils" as *;
+
+/*----------------------------------------*/
+/* 10.12 appointment-feature
+/*----------------------------------------*/
+.appointment-feature__item {
+    padding: 38px 20px;
+    @include border-radius(10px);
+    border: 1px solid rgba(0, 15, 32, 0.10);
+    background: var(--rr-common-white);
+    
+    &-icon {
+        max-width: 78px;
+        
+        img {
+            width: auto;
+        }
+    }
+    
+    h4 {
+        margin-bottom: 6px;
+    }
+}
